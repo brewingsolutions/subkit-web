@@ -1,73 +1,54 @@
-# Subkit - In-App Subscriptions Made Easy 🚀
-> **Version: 1.0.0 (Production-Ready)**
+# Subkit Web
 
-Subkit is a production-grade, developer-friendly platform designed to handle the complexity of global in-app subscriptions, customer management, and real-time revenue analytics—from your first transaction to your billionth.
+The public website and documentation surface for Subkit, an open-source and self-hostable in-app subscription platform.
 
-This repository hosts the ultra-optimized, high-performance marketing landing page and technical UI mockups built on modern React, Next.js, and Tailwind v4.
+> Early foundation: the product, APIs, and documentation are under active development and may change without notice.
 
----
+This repository contains product pages, SDK guides, the public API reference, pricing and roadmap presentations, system status, and contact intake. Private operational integrations live in `subkit-internal-services` and are not part of this public repository.
 
-## 🛠️ Tech Stack & Design System
+## Stack
 
-The project is built on the absolute cutting-edge frontend ecosystem:
+- Next.js 16, React 19, and TypeScript
+- Tailwind CSS 4 and Base UI primitives
+- Vitest and ESLint
+- Next.js standalone output for container deployment
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript 6](https://www.typescriptlang.org/)
-- **CSS Engine**: [Tailwind CSS v4](https://tailwindcss.com/) (using native CSS variables as semantic theme tokens)
-- **UI & Primitives**: 
-  - [Base UI Primitives](https://base-ui.com/)
-  - [Class Variance Authority (CVA)](https://cva.style/)
-  - `clsx` & `tailwind-merge` for clean utility string compositions
-  - [Lucide React](https://lucide.dev/) for dynamic, crisp visual icon sets
-- **Typography Guidelines**:
-  - Headings & Visual Branding: **Plus Jakarta Sans**
-  - Body & Form Controls: **Inter**
-  - Technical Panels & Event Streams: **Source Code Pro**
+## Local development
 
----
-
-## 📂 Codebase Mimarisi & Klasör Yapısı
-
-Kod tabanımız, en üst seviye ölçeklenebilirlik kurallarına göre katmanlandırılmıştır:
-
-```text
-components/
-├── ui/              # Saf, atomik, markasız arayüz elemanları (button, generic card)
-├── layout/          # Global iskelet elemanları (container, section, navbar, footer)
-├── marketing/       # Pazarlama odaklı özel kartlar (hero, features, testimonials)
-└── visuals/         # Dinamik, etkileşimli dashboard ve SVG akış mockup bileşenleri
-lib/
-├── types/           # Etki alanlarına göre ayrılmış TypeScript tanımları
-└── constants/       # Etki alanlarına göre ayrılmış veri sabitleri
-```
-
----
-
-## ⚡ Hızlı Başlangıç (Quick Start)
-
-### 1. Yerel Geliştirme (Local Preview)
-Projeyi bilgisayarınızda çalıştırmak için:
 ```bash
 npm install
+copy .env.example .env.local
 npm run dev
 ```
-* Tarayıcınızda açın: [http://localhost:3000](http://localhost:3000)
 
-### 2. Üretim Derlemesi (Production Compilation)
-Kod doğruluğu, TypeScript ve Turbopack derlemesi için:
+Open [http://localhost:3000](http://localhost:3000). The internal service normally runs at `http://127.0.0.1:3001`.
+
+The contact form requires `CONTACT_SERVICE_URL` and a matching `CONTACT_SERVICE_TOKEN`. Provider credentials such as Telegram tokens belong only in the private internal-services deployment.
+
+## Verification
+
 ```bash
+npm test
+npm run lint
+npx tsc --noEmit
 npm run build
 ```
 
----
+## Repository structure
 
-## 🐋 Docker & Küresel Dağıtım (Deployment)
+```text
+app/                 Route entries and HTTP adapters
+features/            Product-domain modules and tests
+components/          Shared UI, layout, and visual components
+docs/adr/             Architecture decisions
+```
 
-Projemiz, **Next.js Standalone** çıktısı sayesinde Dockerize edilmiş durumdadır ve **Bunny.net Magic Containers** üzerinde global edge olarak dağıtılmaya tamamen hazırdır.
+Read [CONTEXT.md](./CONTEXT.md) for product boundaries, [AGENTS.md](./AGENTS.md) for contribution rules, and [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment notes.
 
-Detaylı adım adım manuel derleme, Docker Hub'a yükleme ve Bunny.net üzerinde sıfır saniye kesintiyle sitenizi güncelleme kılavuzu için **[DEPLOYMENT.md](file:///Users/ataberkdonmez/Downloads/test/landing-page/DEPLOYMENT.md)** dosyasını inceleyin.
+## Security and contributions
 
----
+See [SECURITY.md](./SECURITY.md) for private vulnerability reporting and [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a change.
 
-## 🤖 Yapay Zeka Ajan Kuralları (AI Agents)
+## License
 
-Bu projede çalışacak olan AI kodlama yardımcılarının, temiz mimariyi koruması ve kod kalitesini bozmaması için uyması gereken strict kurallara **[AGENTS.md](file:///Users/ataberkdonmez/Downloads/test/landing-page/AGENTS.md)** dosyasından erişebilirsiniz.
+Licensed under the Apache License 2.0. See [LICENSE](./LICENSE).

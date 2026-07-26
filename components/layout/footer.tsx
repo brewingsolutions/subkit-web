@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { FOOTER_LINKS } from "@/lib/constants/navigation";
+import { FOOTER_LINKS } from "@/features/navigation/content";
 
 export function Footer() {
   return (
@@ -48,7 +48,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Subkit. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-slate-400">
-            <span>EU-based & GDPR compliant infrastructure.</span>
+            <span>EU-focused, privacy-first infrastructure.</span>
           </div>
         </div>
       </Container>

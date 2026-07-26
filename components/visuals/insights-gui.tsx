@@ -1,6 +1,6 @@
 export function InsightsGui() {
   return (
-    <div className="relative w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-[0_15px_35px_rgba(50,50,93,0.03),0_5px_15px_rgba(0,0,0,0.02)] overflow-hidden group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(99,91,255,0.06)] dark:hover:border-primary/20">
+    <div className="shadow-technical hover:shadow-technical-hover group relative w-full max-w-md overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300">
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent -z-10" />
 
       {/* Real-time stats header */}
@@ -28,17 +28,17 @@ export function InsightsGui() {
           Monthly Revenue Distribution
         </span>
         <div className="flex items-end justify-between h-32 pt-4 px-2 bg-muted/20 rounded-xl border border-border">
-          <div className="w-6 bg-slate-200/50 dark:bg-slate-700/50 rounded-t h-[40%] group-hover:h-[45%] transition-all duration-500 relative flex justify-center">
+          <div className="relative flex h-[40%] w-6 justify-center rounded-t bg-slate-200/50 transition-all duration-500 group-hover:h-[45%]">
             <div className="absolute bottom-0 w-full bg-primary/40 rounded-t h-[30%]" />
           </div>
-          <div className="w-6 bg-slate-200/50 dark:bg-slate-700/50 rounded-t h-[60%] group-hover:h-[65%] transition-all duration-500 relative flex justify-center">
+          <div className="relative flex h-[60%] w-6 justify-center rounded-t bg-slate-200/50 transition-all duration-500 group-hover:h-[65%]">
             <div className="absolute bottom-0 w-full bg-primary/40 rounded-t h-[45%]" />
           </div>
-          <div className="w-6 bg-slate-200/50 dark:bg-slate-700/50 rounded-t h-[50%] group-hover:h-[55%] transition-all duration-500 relative flex justify-center">
+          <div className="relative flex h-[50%] w-6 justify-center rounded-t bg-slate-200/50 transition-all duration-500 group-hover:h-[55%]">
             <div className="absolute bottom-0 w-full bg-primary/40 rounded-t h-[35%]" />
           </div>
-          <div className="w-6 bg-slate-200/50 dark:bg-slate-700/50 rounded-t h-[80%] group-hover:h-[88%] transition-all duration-500 relative flex justify-center">
-            <div className="absolute bottom-0 w-full bg-gradient-to-t from-primary to-[#ec72e2] rounded-t h-[65%]" />
+          <div className="relative flex h-[80%] w-6 justify-center rounded-t bg-slate-200/50 transition-all duration-500 group-hover:h-[88%]">
+            <div className="from-primary to-brand-highlight absolute bottom-0 h-[65%] w-full rounded-t bg-gradient-to-t" />
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LogEvent } from "@/lib/types/mock-data";
-import { INITIAL_LOGS, NEW_EVENTS_POOL } from "@/lib/constants/mock-data";
+import { LogEvent } from "@/features/home/model";
+import { INITIAL_LOGS, NEW_EVENTS_POOL } from "@/features/home/demo-data";
 
 export function LiveLogger() {
   const [logs, setLogs] = useState<LogEvent[]>(INITIAL_LOGS);
@@ -45,7 +45,7 @@ export function LiveLogger() {
               <span className="text-slate-300 font-semibold">{log.event}</span>
             </div>
             {log.amount && (
-              <span className="text-[#00d4ff] font-bold">{log.amount}</span>
+              <span className="text-chart-2 font-bold">{log.amount}</span>
             )}
           </div>
         ))}

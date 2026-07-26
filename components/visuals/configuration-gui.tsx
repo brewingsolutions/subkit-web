@@ -5,7 +5,7 @@ export function ConfigurationGui() {
   const [price, setPrice] = useState(9.99);
 
   return (
-    <div className="relative w-full max-w-md rounded-2xl border border-border bg-card p-6 shadow-[0_15px_35px_rgba(50,50,93,0.03),0_5px_15px_rgba(0,0,0,0.02)] overflow-hidden group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(99,91,255,0.06)] dark:hover:border-primary/20">
+    <div className="shadow-technical hover:shadow-technical-hover group relative w-full max-w-md overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300">
       <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-transparent -z-10" />
       
       <div className="flex items-center justify-between pb-4 border-b border-border mb-6">
@@ -57,7 +57,7 @@ export function ConfigurationGui() {
               step="1"
               value={price}
               onChange={(e) => setPrice(parseFloat(e.target.value))}
-              className="w-full h-1.5 rounded-full bg-slate-100 dark:bg-slate-800 appearance-none cursor-pointer accent-primary focus:outline-none"
+              className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-slate-100 accent-primary focus:outline-none"
             />
           </div>
         </div>
