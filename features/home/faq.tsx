@@ -21,7 +21,7 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: "What is Subkit's connection to the EU Next Generation Internet (NGI) initiative?",
-    answer: "Subkit is designed in strict alignment with the European Commission's NGI core values: digital sovereignty, user-first privacy, open-source transparency, and decentralized resilience. By allowing businesses to self-host their billing pipeline, we ensure sensitive purchase metadata never leaves European borders, upholding strict GDPR compliance by default.",
+    answer: "Subkit is designed around NGI values such as digital sovereignty, user-first privacy, open-source transparency, and resilience. Self-hosting can give operators control over where purchase metadata is processed, but compliance still depends on each deployment and the operator's legal obligations. Subkit is not currently presented as an NGI-funded project.",
   },
   {
     question: "Can I run A/B testing and design paywalls on my self-hosted instance?",

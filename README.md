@@ -1,91 +1,54 @@
-# Subkit - In-App Subscriptions Made Easy 🚀
-> **Version: 1.0.0 (Production-Ready)**
+# Subkit Web
 
-Subkit is a production-grade, developer-friendly platform designed to handle the complexity of global in-app subscriptions, customer management, and real-time revenue analytics—from your first transaction to your billionth.
+The public website and documentation surface for Subkit, an open-source and self-hostable in-app subscription platform.
 
-This repository hosts Subkit's public product surface: product discovery, SDK Guides, API Reference, Pricing Catalog, Roadmap, System Status, and contact intake.
+> Early foundation: the product, APIs, and documentation are under active development and may change without notice.
 
----
+This repository contains product pages, SDK guides, the public API reference, pricing and roadmap presentations, system status, and contact intake. Private operational integrations live in `subkit-internal-services` and are not part of this public repository.
 
-## 🛠️ Tech Stack & Design System
+## Stack
 
-The project is built on the absolute cutting-edge frontend ecosystem:
+- Next.js 16, React 19, and TypeScript
+- Tailwind CSS 4 and Base UI primitives
+- Vitest and ESLint
+- Next.js standalone output for container deployment
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [TypeScript 6](https://www.typescriptlang.org/)
-- **CSS Engine**: [Tailwind CSS v4](https://tailwindcss.com/) (using native CSS variables as semantic theme tokens)
-- **UI & Primitives**: 
-  - [Base UI Primitives](https://base-ui.com/)
-  - [Class Variance Authority (CVA)](https://cva.style/)
-  - `clsx` & `tailwind-merge` for clean utility string compositions
-  - [Lucide React](https://lucide.dev/) for dynamic, crisp visual icon sets
-- **Typography Guidelines**:
-  - Headings & Visual Branding: **Plus Jakarta Sans**
-  - Body & Form Controls: **Inter**
-  - Technical Panels & Event Streams: **Source Code Pro**
+## Local development
 
----
-
-## 📂 Codebase Mimarisi & Klasör Yapısı
-
-Routing ile domain implementation birbirinden ayrılır. `app/(site)` URL'leri değiştirmeden ortak public shell'i sağlar; domain içeriği, tipleri, server/client implementation ve testler ilgili `features/` alanında birlikte tutulur:
-
-```text
-app/
-├── (site)/          # Ortak public site layout ve route entry point'leri
-└── api/             # HTTP route adapter'ları
-features/
-├── contact/         # Contact Inquiry intake ve delivery adapter'ları
-├── docs/            # SDK Guide ve API Reference presentation
-├── home/            # Ana sayfa domain implementation'ı
-├── navigation/      # Public navigation content ve etkileşim
-├── pricing/         # Pricing Catalog, Pricing Quote ve calculator
-├── roadmap/         # Roadmap snapshot ve presentation
-└── status/          # System Status modeli ve presentation
-components/
-├── ui/              # Saf, atomik, markasız arayüz elemanları
-├── layout/          # Global iskelet elemanları
-└── visuals/         # Paylaşılan dekoratif ve teknik görseller
-docs/adr/             # Uzun ömürlü mimari kararlar
-```
-
----
-
-## ⚡ Hızlı Başlangıç (Quick Start)
-
-### 1. Yerel Geliştirme (Local Preview)
-Projeyi bilgisayarınızda çalıştırmak için:
 ```bash
 npm install
+copy .env.example .env.local
 npm run dev
 ```
-* Tarayıcınızda açın: [http://localhost:3000](http://localhost:3000)
 
-### 2. Üretim Derlemesi (Production Compilation)
-Kod doğruluğu, TypeScript ve Turbopack derlemesi için:
-```bash
-npm run build
-```
+Open [http://localhost:3000](http://localhost:3000). The internal service normally runs at `http://127.0.0.1:3001`.
 
-### 3. Doğrulama
+The contact form requires `CONTACT_SERVICE_URL` and a matching `CONTACT_SERVICE_TOKEN`. Provider credentials such as Telegram tokens belong only in the private internal-services deployment.
+
+## Verification
 
 ```bash
 npm test
 npm run lint
 npx tsc --noEmit
+npm run build
 ```
 
-Pricing Catalog, Roadmap ve System Status için authoritative kaynak planlanan `subkit-internal-services` reposudur. Bu repo hazır olana kadar pricing ve roadmap tarihli temporary local kaynaklar kullanır; System Status doğrulanamıyorsa `Unknown` gösterilir.
+## Repository structure
 
----
+```text
+app/                 Route entries and HTTP adapters
+features/            Product-domain modules and tests
+components/          Shared UI, layout, and visual components
+docs/adr/             Architecture decisions
+```
 
-## 🐋 Docker & Küresel Dağıtım (Deployment)
+Read [CONTEXT.md](./CONTEXT.md) for product boundaries, [AGENTS.md](./AGENTS.md) for contribution rules, and [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment notes.
 
-Projemiz, **Next.js Standalone** çıktısı sayesinde Dockerize edilmiş durumdadır ve **Bunny.net Magic Containers** üzerinde global edge olarak dağıtılmaya tamamen hazırdır.
+## Security and contributions
 
-Detaylı adım adım kılavuz için **[DEPLOYMENT.md](./DEPLOYMENT.md)** dosyasını inceleyin.
+See [SECURITY.md](./SECURITY.md) for private vulnerability reporting and [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a change.
 
----
+## License
 
-## 🤖 Yapay Zeka Ajan Kuralları (AI Agents)
-
-Kodlama ajanlarının kuralları **[AGENTS.md](./AGENTS.md)**, ürün dili **[CONTEXT.md](./CONTEXT.md)** ve mimari kararlar **[docs/adr](./docs/adr/)** altında tutulur.
+Licensed under the Apache License 2.0. See [LICENSE](./LICENSE).

@@ -13,6 +13,9 @@ export async function submitContactInquiry(
   input: unknown,
   delivery: ContactDelivery
 ): Promise<ContactSubmissionResult> {
+  if (isRecord(input) && normalizeRequiredText(input.website)) {
+    return { ok: true };
+  }
   const inquiry = parseContactInquiry(input);
   if (!inquiry.ok) {
     return inquiry;
@@ -75,4 +78,3 @@ function normalizeOptionalText(value: unknown): string | null {
 function invalid(message: string): ParseResult {
   return { ok: false, reason: "invalid", message };
 }
-

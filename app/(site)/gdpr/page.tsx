@@ -5,7 +5,7 @@ import { ShieldCheck, ShieldAlert, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "GDPR & Data Sovereignty - Subkit",
-  description: "Understand how Subkit offers the ultimate GDPR-compliant alternative to RevenueCat and Adapty through open-source self-hosting.",
+  description: "Learn how self-hosting Subkit can support data control and EU data-residency strategies.",
 };
 
 export default function GDPRPage() {
@@ -17,7 +17,7 @@ export default function GDPRPage() {
           <div className="text-center mb-16 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/50 text-xs font-semibold text-emerald-700">
               <ShieldCheck className="size-3.5" />
-              <span>Sovereign & GDPR Compliant by Design</span>
+              <span>Privacy-first and self-hostable</span>
             </div>
             
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl text-card-foreground font-heading">
@@ -66,7 +66,7 @@ export default function GDPRPage() {
                     With Subkit Self-Hosted, **no subscriber transaction data ever leaves your own infrastructure.** 
                   </p>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    Since the database and engine run entirely inside your own servers (e.g. EU clouds or on-premise), you are the sole controller and processor. This eliminates third-party data processing risks and satisfies EU digital sovereignty automatically!
+                    Running the database and engine on infrastructure you control can reduce third-party processing and support data-residency requirements. Self-hosting does not automatically establish GDPR compliance: operators remain responsible for configuration, security, retention, legal bases, and data-subject rights.
                   </p>
                 </div>
                 <div className="text-brand-accent mt-4 border-t border-slate-800 pt-4 font-mono text-[11px] font-semibold">

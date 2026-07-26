@@ -43,6 +43,17 @@ describe("submitContactInquiry", () => {
     expect(delivery.inquiries).toHaveLength(0);
   });
 
+  it("silently accepts honeypot submissions without calling delivery", async () => {
+    const delivery = createInMemoryContactDelivery();
+    const result = await submitContactInquiry(
+      { name: "Bot", email: "bot@example.com", message: "Spam", website: "https://spam.test" },
+      delivery
+    );
+
+    expect(result).toEqual({ ok: true });
+    expect(delivery.inquiries).toHaveLength(0);
+  });
+
   it("maps adapter errors to a delivery failure", async () => {
     const delivery: ContactDelivery = {
       async deliver() {
@@ -58,4 +69,3 @@ describe("submitContactInquiry", () => {
     expect(result).toMatchObject({ ok: false, reason: "delivery-failed" });
   });
 });
-

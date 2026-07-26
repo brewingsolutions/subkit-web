@@ -29,7 +29,7 @@ const BENEFITS: BenefitCard[] = [
   },
   {
     title: "EU Digital Sovereignty",
-    description: "100% GDPR compliant. Store all transaction and subscriber logs in secure EU clouds or your own dedicated server.",
+    description: "Keep control of transaction and subscriber data by choosing EU infrastructure or your own dedicated server.",
     icon: ShieldCheck,
     iconBg: "bg-emerald-500/10",
     iconColor: "text-emerald-600",

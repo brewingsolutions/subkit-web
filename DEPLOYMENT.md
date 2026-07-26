@@ -68,9 +68,11 @@ Eğer imajı GitHub Actions kullanmadan kendi bilgisayarınızdan GHCR'ye yükle
    - **Username:** GitHub Kullanıcı Adınız
    - **Password / Token:** `read:packages` yetkili GitHub Personal Access Token (PAT).
    *(Not: GitHub Paket Ayarlarından paketi "Public" yaparsanız parola girmeden de Bunny çekebilir).*
-4. **Runtime Environment Variables:** İletişim formunun mesajları Telegram'a ulaştırabilmesi için container ortamına aşağıdaki değişkenleri ekleyin:
-   - `TELEGRAM_BOT_TOKEN`
-   - `TELEGRAM_CHAT_ID`
+4. **Runtime Environment Variables:** Contact intake is forwarded to the private internal service. Add:
+   - `CONTACT_SERVICE_URL` (for example `https://api.subkit.eu`)
+   - `CONTACT_SERVICE_TOKEN` (must match `CONTACT_INGEST_TOKEN` in the private service)
+
+   Provider credentials and adapters, including Telegram, must remain only in the private `subkit-internal-services` deployment.
 
    Bu değişkenler tanımlı değilse iletişim endpoint'i mesaj teslim edilmiş gibi davranmaz ve `503 Service Unavailable` döndürür.
 5. **Redeploy:** Sağ üst köşedeki **"Redeploy"** butonuna basarak yeni imajı sıfır kesintiyle canlıya alın. 🎉

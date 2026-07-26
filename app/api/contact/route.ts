@@ -1,15 +1,30 @@
 import { NextResponse } from "next/server";
 import { submitContactInquiry } from "@/features/contact/contact-intake";
-import { createTelegramContactDelivery } from "@/features/contact/telegram-contact-delivery";
+import { checkContactRateLimit } from "@/features/contact/contact-rate-limit";
+import { createInternalContactDelivery } from "@/features/contact/internal-contact-delivery";
+
+const MAX_BODY_BYTES = 16_384;
 
 export async function POST(request: Request) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const serviceUrl = process.env.CONTACT_SERVICE_URL;
+  const serviceToken = process.env.CONTACT_SERVICE_TOKEN;
+  const clientKey = getClientKey(request);
+  const rateLimit = checkContactRateLimit(clientKey);
 
-  if (!botToken || !chatId) {
-    console.error(
-      "Contact delivery unavailable: Telegram configuration is missing."
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(rateLimit.retryAfterSeconds) } }
     );
+  }
+
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "The request body is too large." }, { status: 413 });
+  }
+
+  if (!serviceUrl || !serviceToken) {
+    console.error("Contact delivery unavailable: internal service configuration is missing.");
     return NextResponse.json(
       {
         error:
@@ -31,7 +46,7 @@ export async function POST(request: Request) {
 
   const result = await submitContactInquiry(
     input,
-    createTelegramContactDelivery({ botToken, chatId })
+    createInternalContactDelivery({ baseUrl: serviceUrl, token: serviceToken })
   );
 
   if (result.ok) {
@@ -47,4 +62,9 @@ export async function POST(request: Request) {
     { error: "Message delivery failed. Please try again later." },
     { status: 502 }
   );
+}
+
+function getClientKey(request: Request): string {
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  return forwardedFor || request.headers.get("x-real-ip") || "unknown";
 }

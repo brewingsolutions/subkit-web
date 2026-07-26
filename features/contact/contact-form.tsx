@@ -16,6 +16,7 @@ export function ContactForm() {
     company: "",
     name: "",
     message: "",
+    website: "",
   });
   
   const [status, setStatus] = useState<SubmissionStatus>("idle");
@@ -72,7 +73,7 @@ export function ContactForm() {
         <div className="pt-4">
           <Button
             onClick={() => {
-              setFormData({ email: "", company: "", name: "", message: "" });
+              setFormData({ email: "", company: "", name: "", message: "", website: "" });
               setStatus("idle");
             }}
             variant="outline"
@@ -92,6 +93,18 @@ export function ContactForm() {
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/[0.01] to-transparent -z-10" />
 
       <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="absolute -left-[10000px] top-auto size-px overflow-hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData.website}
+            onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+          />
+        </div>
         {status === "error" ? (
           <p
             role="alert"
@@ -110,6 +123,9 @@ export function ContactForm() {
             <input
               type="email"
               id="email"
+              name="email"
+              autoComplete="email"
+              maxLength={320}
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -125,6 +141,9 @@ export function ContactForm() {
             <input
               type="text"
               id="company"
+              name="company"
+              autoComplete="organization"
+              maxLength={160}
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               placeholder="e.g. Acme Corp"
@@ -141,6 +160,9 @@ export function ContactForm() {
           <input
             type="text"
             id="name"
+            name="name"
+            autoComplete="name"
+            maxLength={120}
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -156,12 +178,14 @@ export function ContactForm() {
           </label>
           <textarea
             id="message"
+            name="message"
+            maxLength={5000}
             required
             rows={5}
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             placeholder="Tell us about your project, platform, and in-app purchase requirements..."
-            className="w-full rounded-xl border border-slate-200 bg-background px-4 py-3 text-sm text-card-foreground placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none font-sans"
+            className="w-full rounded-xl border border-slate-200 bg-background px-4 py-3 text-sm text-card-foreground placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-y font-sans"
           />
         </div>
 

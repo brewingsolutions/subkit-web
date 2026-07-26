@@ -66,7 +66,7 @@ export function Hero() {
             <div className="mb-6">
               <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary border border-primary/20 shadow-sm">
                 <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                Next Generation Internet (NGI) Supported Open-Source Project
+                Open source · Aligned with NGI principles
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="size-4 text-primary" />
-                <span>GDPR Compliant & Privacy-First</span>
+                <span>Privacy-First & Self-Hostable</span>
               </div>
             </div>
 

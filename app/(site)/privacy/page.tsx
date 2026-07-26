@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-bold text-card-foreground font-heading">5. GDPR Compliance & Data Security</h2>
               <p>
-                Subkit operates under EU-based standards and is fully GDPR compliant. If you are located within the European Economic Area (EEA), 
+                Subkit is being designed to support GDPR-aligned operation and EU data-residency choices. Actual compliance depends on the deployed service, configuration, contracts, and the responsibilities of each controller and processor. If you are located within the European Economic Area (EEA),
                 you possess specific data protection rights, including the right to access, rectify, or erase the personal data we hold about you.
               </p>
               <p>
