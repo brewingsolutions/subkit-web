@@ -4,7 +4,15 @@ The public website and documentation surface for Subkit, an open-source and self
 
 > Early foundation: the product, APIs, and documentation are under active development and may change without notice.
 
-This repository contains product pages, SDK guides, the public API reference, pricing and roadmap presentations, system status, and contact intake. Private operational integrations live in `subkit-internal-services` and are not part of this public repository.
+This repository contains product pages, SDK and public-contract previews, preliminary
+offering and roadmap presentations, system status, and contact intake. Private operational
+integrations live in `subkit-internal-services` and are not part of this public repository.
+
+The website distinguishes shipped foundations from planned capabilities. Subkit Cloud,
+production store integrations, customer SDKs, paywall tooling, analytics, pricing, and
+service-level commitments are not currently available unless a page explicitly says otherwise.
+Privacy and data-processing pages describe project direction and current website handling;
+they are not legal advice, compliance certifications, or executable Cloud agreements.
 
 ## Stack
 

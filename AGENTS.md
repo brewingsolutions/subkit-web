@@ -11,7 +11,7 @@ This guide establishes the rules and patterns that all AI coding agents must fol
 ---
 
 ## 1. Project Overview
-- A production-grade Next.js landing page & marketing website.
+- The public Subkit product and documentation surface, currently in an early and unstable phase.
 - **Goal**: Maintain visual excellence, clean domain separation, and long-term expandability.
 - Read the repository root `CONTEXT.md` before changing product language or domain ownership.
 - Read applicable decisions in `docs/adr/` before architectural changes.
@@ -52,7 +52,7 @@ components/
 ## 5. Styling & Visual Design Guidelines
 - **Zero Hex Magic Values**: Do not write `#635bff` or `#f6f9fc` as hardcoded Tailwind utility classes. Use semantic tokens (`bg-background`, `text-foreground`, `text-card-foreground`, `bg-primary`).
 - Preserve the premium visual assets, layout padding (`py-20 lg:py-32`), gradients, and animations.
-- Rely on theme variables configured in [globals.css](file:///Users/ataberkdonmez/Downloads/test/landing-page/app/globals.css) for Light/Dark continuity.
+- Rely on semantic theme variables configured in `app/globals.css`. Subkit currently ships one light theme.
 
 ## 6. TypeScript Rules
 - Enforce strict typing. **No `any` annotations**.
@@ -87,3 +87,10 @@ When reporting tasks, provide:
 1. Architectural changes overview.
 2. Direct checklist of modified files.
 3. Verification logs (compilation outputs).
+
+## 13. Documentation Ownership
+
+- Keep `README.md`, `.env.example`, `DEPLOYMENT.md`, and `CONTEXT.md` aligned with runtime behavior.
+- Never publish private internal-services routes or provider credentials in the API Reference.
+- Update the workspace `../CONTEXT.md` and public `../subkit/README.md` when this repository's
+  public role, availability, domain, deployment, or major capabilities change.

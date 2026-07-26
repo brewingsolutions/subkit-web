@@ -46,6 +46,6 @@ print(offerings);`,
   },
 };
 
-export const API_CONTRACT_PREVIEW = `GET /v1/pricing
-GET /v1/roadmap
-GET /v1/status`;
+export const API_CONTRACT_PREVIEW = `# No stable public SDK operations are published yet.
+# Health and operator routes are intentionally excluded.
+# Candidate SDK operations will appear here after implementation and review.`;

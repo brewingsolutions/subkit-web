@@ -1,6 +1,6 @@
 # Subkit - Canlıya Alma ve Geliştirme Kılavuzu (GHCR & Bunny.net)
 
-Bu dosya, kod üzerinde değişiklik yaptığınızda sitenizi yerel ortamda test etmek, imajı **GitHub Container Registry (GHCR)** üzerine yüklemek ve Bunny.net (Magic Containers) üzerinde sıfır kesintiyle güncellemek için gerekli kılavuzdur.
+Bu dosya, kod üzerinde değişiklik yaptığınızda sitenizi yerel ortamda test etmek, OCI uyumlu container imajını **GitHub Container Registry (GHCR)** üzerine yüklemek ve Bunny.net Magic Containers üzerinde güncellemek için gerekli kılavuzdur. Docker Buildx mevcut build aracıdır; uygulamanın çalışma zamanı Docker API'sine bağlı değildir.
 
 ---
 
@@ -17,7 +17,7 @@ npm run dev
 
 ## 🔍 2. Projeyi Derleme Kontrolü (Build Check)
 
-Docker paketini oluşturmadan önce TypeScript veya derleme hatası olmadığından emin olmak için projeyi derleyin:
+Container imajını oluşturmadan önce TypeScript veya derleme hatası olmadığından emin olmak için projeyi derleyin:
 
 ```bash
 npm run build
@@ -30,7 +30,7 @@ npm run build
 Projede `.github/workflows/deploy.yml` otomasyonu aktiftir.
 
 `main` branch'ine kod push ettiğinizde GitHub Actions otomatik olarak:
-1. Docker imajını `linux/amd64` mimarisinde derler.
+1. OCI uyumlu imajı Docker Buildx ile `linux/amd64` mimarisinde derler.
 2. `ghcr.io/<github-kullanici-adi>/<repo-adi>:latest` adresiyle GHCR'ye yükler.
 
 ---

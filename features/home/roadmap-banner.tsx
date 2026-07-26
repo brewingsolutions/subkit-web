@@ -19,7 +19,7 @@ export function RoadmapBanner() {
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 text-xs font-semibold border border-blue-500/20">
               <Award className="size-3.5" />
-              <span>EU Digital Sovereignty Roadmap</span>
+              <span>Open Infrastructure Roadmap</span>
             </div>
             
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight font-heading leading-tight">
@@ -28,7 +28,7 @@ export function RoadmapBanner() {
             </h2>
             
             <p className="text-sm sm:text-base leading-relaxed text-slate-300 max-w-xl">
-              We are not just replicating proprietary billing tools. We are designing a fully transparent, federated monetization ecosystem. Explore our detailed plan to replace RevenueCat and Adapty with a sovereign, open-source standard.
+              Subkit is building its foundations in public. Explore the planned sequence from a portable Core runtime to store integrations, SDKs, managed operations, and privacy-conscious product tooling.
             </p>
 
             <div className="pt-4">
@@ -62,7 +62,7 @@ export function RoadmapBanner() {
                 </div>
                 <h4 className="text-sm font-bold text-white font-heading">Core Sovereign Infrastructure</h4>
                 <p className="text-xs text-slate-450 leading-relaxed">
-                  PostgreSQL core receipt verification API & Native SDK deployments.
+                  PostgreSQL domain foundations, event processing, public contracts, and production store-validation research.
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export function RoadmapBanner() {
                 </div>
                 <h4 className="text-sm font-bold text-white font-heading">Remote Paywalls & Configuration</h4>
                 <p className="text-xs text-slate-450 leading-relaxed">
-                  JSON-driven paywalls & remote price changes without App Store releases.
+                  Planned JSON-driven configuration and paywall delivery, subject to implementation and validation.
                 </p>
               </div>
             </div>
@@ -100,9 +100,9 @@ export function RoadmapBanner() {
                     Q1 2027
                   </span>
                 </div>
-                <h4 className="text-sm font-bold text-white font-heading">Privacy-First A/B Testing & AI</h4>
+                <h4 className="text-sm font-bold text-white font-heading">Privacy-Conscious Experimentation</h4>
                 <p className="text-xs text-slate-450 leading-relaxed">
-                  Local GDPR A/B testing & lifetime value predictions on sovereign DBs.
+                  Planned local experimentation and reporting with explicit data-retention and compliance controls.
                 </p>
               </div>
             </div>

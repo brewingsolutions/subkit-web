@@ -31,7 +31,7 @@ export function PricingPlans() {
                   <h2 className="font-heading text-lg font-bold">{plan.name}</h2>
                   {plan.featured ? (
                     <span className="bg-brand-accent/10 text-brand-accent border-brand-accent/20 rounded-full border px-2.5 py-1 font-mono text-[9px] font-bold uppercase">
-                      Most Popular
+                      Planned
                     </span>
                   ) : null}
                 </div>

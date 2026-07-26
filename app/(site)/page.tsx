@@ -4,7 +4,6 @@ import { Features } from "@/features/home/features";
 import { Comparison } from "@/features/home/comparison";
 import { RoadmapBanner } from "@/features/home/roadmap-banner";
 import { Faq } from "@/features/home/faq";
-// import { Testimonials } from "@/features/home/testimonials";
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
       <Comparison />
       <RoadmapBanner />
       <Faq />
-      {/* <Testimonials /> */}
     </main>
   );
 }

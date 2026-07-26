@@ -18,10 +18,3 @@ export interface PricingCatalog {
   plans: ReadonlyArray<PricingPlan>;
 }
 
-export interface PricingQuote {
-  monthlyRevenue: number;
-  competitorEstimate: number;
-  subkitEstimate: number;
-  estimatedSavings: number;
-}
-

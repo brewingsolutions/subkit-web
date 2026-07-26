@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
-  { name: "Integrations", href: "/#integrations" },
+  { name: "Architecture", href: "/#features" },
   { name: "Roadmap", href: "/roadmap" },
   { name: "Pricing", href: "/pricing" },
 ];
@@ -7,14 +7,14 @@ export const NAV_LINKS = [
 export const NAV_DEV_DROPDOWN = [
   {
     name: "Documentation",
-    description: "Quickstart guides & SDK setups",
+    description: "SDK design previews and project status",
     href: "/docs",
     icon: "BookOpen",
     iconColor: "text-blue-500",
   },
   {
-    name: "API Reference",
-    description: "REST API specs & references",
+    name: "Contract Preview",
+    description: "Current and planned REST contract boundaries",
     href: "/docs",
     icon: "Terminal",
     iconColor: "text-purple-500",
@@ -35,26 +35,25 @@ export const NAV_MORE_DROPDOWN = [
 
 export const FOOTER_LINKS = {
   Product: [
-    { name: "Integrations", href: "/#integrations" },
+    { name: "Architecture", href: "/#features" },
     { name: "Roadmap", href: "/roadmap" },
     { name: "Pricing", href: "/pricing" },
-    { name: "API Reference", href: "/docs" },
+    { name: "Contract Preview", href: "/docs" },
     { name: "System Status", href: "/docs" },
   ],
   Developers: [
     { name: "Documentation", href: "/docs" },
-    { name: "iOS SDK", href: "/docs" },
-    { name: "Android SDK", href: "/docs" },
-    { name: "Flutter SDK", href: "/docs" },
-    { name: "React Native SDK", href: "/docs" },
+    { name: "SDK Roadmap", href: "/roadmap" },
+    { name: "Subkit on GitHub", href: "https://github.com/brewingsolutions/subkit" },
+    { name: "Subkit Core", href: "https://github.com/brewingsolutions/subkit-core" },
   ],
   Support: [
     { name: "About Us", href: "/about" },
-    { name: "GDPR Compliance", href: "/gdpr" },
-    { name: "Data Processing Addendum (DPA)", href: "/dpa" },
+    { name: "Privacy & Data Control", href: "/gdpr" },
+    { name: "DPA Status", href: "/dpa" },
     // { name: "Blog", href: "#blog" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
+    { name: "Privacy Notice", href: "/privacy" },
+    { name: "Website Terms", href: "/terms" },
     { name: "Contact Us", href: "/contact" },
   ],
 };

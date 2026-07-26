@@ -31,7 +31,7 @@ export function LiveLogger() {
   return (
     <div className="space-y-2.5">
       <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-semibold text-left">
-        Real-time Event Logs
+        Simulated Event Flow
       </span>
 
       <div className="space-y-2 font-mono text-[11px] min-h-[140px] text-left">

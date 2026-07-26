@@ -2,13 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { ChevronRight, CheckCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/container";
 import { GradientMesh } from "@/components/visuals/gradient-mesh";
 import { GridOverlay } from "@/components/visuals/grid-overlay";
 import { RevenueChart } from "@/components/visuals/revenue-chart";
 import { LiveLogger } from "@/components/visuals/live-logger";
-import { SUPPORTED_PLATFORMS, TYPEWRITER_WORDS } from "@/features/home/content";
+import { PLANNED_PLATFORMS, TYPEWRITER_WORDS } from "@/features/home/content";
 
 export function Hero() {
   const [typedText, setTypedText] = useState(TYPEWRITER_WORDS[0]);
@@ -66,7 +65,7 @@ export function Hero() {
             <div className="mb-6">
               <div className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary border border-primary/20 shadow-sm">
                 <span className="flex h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-                Open source · Aligned with NGI principles
+                Apache-2.0 open source · Pre-alpha
               </div>
             </div>
 
@@ -80,14 +79,14 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 text-base leading-8 text-foreground sm:text-lg max-w-xl">
-              Subkit is the privacy-first alternative to proprietary tools. Run it on our fully-managed Cloud or self-host on your own infrastructure with 100% data ownership.
+              Subkit is building portable, self-hostable infrastructure for in-app subscriptions. The public core is available for early evaluation; store integrations, SDKs, and managed Cloud remain in development.
             </p>
 
             {/* Checklists */}
             <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle className="size-4 text-primary" />
-                <span>100% Open-Source SDKs & Core</span>
+                <span>Public, inspectable Core foundation</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="size-4 text-primary" />
@@ -97,20 +96,20 @@ export function Hero() {
 
             {/* Actions */}
             <div className="mt-10 flex flex-col sm:flex-row items-center gap-6">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto rounded-full bg-primary hover:bg-primary/95 text-white px-7 py-6 text-sm font-semibold hover:-translate-y-0.5 active:translate-y-0 active:scale-98 transition-all flex items-center gap-1.5 group cursor-pointer"
-              >
-                Start on Subkit Cloud
-                <ChevronRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
-              </Button>
               <a
-                href="https://github.com/brewingsolutions/subkit"
+                href="/contact"
+                className="group flex w-full items-center justify-center gap-1.5 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary/95 active:translate-y-0 active:scale-98 sm:w-auto"
+              >
+                Join the Cloud waitlist
+                <ChevronRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+              </a>
+              <a
+                href="https://github.com/brewingsolutions/subkit-core"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-slate-600 hover:text-card-foreground font-semibold text-sm group transition-colors cursor-pointer"
               >
-                Deploy Self-Hosted
+                Explore Subkit Core
                 <ChevronRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
               <a
@@ -125,10 +124,10 @@ export function Hero() {
             {/* Platform pills */}
             <div className="mt-12 flex flex-col gap-3">
               <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
-                Supported Platforms & Frameworks
+                Planned SDK targets
               </span>
               <div className="flex flex-wrap gap-3 items-center mt-1">
-                {SUPPORTED_PLATFORMS.map((platform) => (
+                {PLANNED_PLATFORMS.map((platform) => (
                   <span
                     key={platform}
                     className="px-3 py-1 rounded-full border border-slate-200 bg-card text-[11px] text-slate-650 font-medium hover:border-slate-350 hover:text-card-foreground transition-all cursor-default shadow-sm"
@@ -154,11 +153,11 @@ export function Hero() {
                   <span className="size-3 rounded-full bg-emerald-500/80" />
                 </div>
                 <span className="text-[10px] text-slate-500 font-semibold uppercase tracking-wider font-mono">
-                  billing_live_stream
+                  event_flow_concept
                 </span>
                 <span className="flex items-center gap-1 text-[9px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                   <span className="size-1.5 rounded-full bg-emerald-400 animate-ping" />
-                  Live
+                  Preview
                 </span>
               </div>
 

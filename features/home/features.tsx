@@ -18,10 +18,10 @@ export function Features() {
       {/* Global Title */}
       <div className="mx-auto max-w-3xl text-center px-6 mb-20 lg:mb-32">
         <span className="text-xs font-bold uppercase tracking-widest text-primary block font-mono">
-          Our Platform
+          Product Direction
         </span>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-5xl text-card-foreground font-heading">
-          In-App Subscriptions Made Easy
+          An Open Subscription Stack, Built in Public
         </h2>
         <div className="mx-auto mt-4 h-[2px] w-20 bg-primary" />
       </div>
@@ -40,13 +40,13 @@ export function Features() {
               </Badge>
             </div>
             <h3 className="text-2xl font-bold sm:text-4xl text-card-foreground tracking-tight">
-              Open Source SDKs
+              Stable SDK Contracts
             </h3>
             <p className="mt-6 text-base leading-8 text-foreground">
-              With Subkit you can build a customized mobile subscription business in hours, not months.
+              Subkit Core is establishing separate public SDK, authenticated operator, and private operational contracts.
             </p>
             <p className="mt-4 text-base leading-8 text-foreground">
-              Host and configure products using our dashboard and fetch products, make purchases, and check subscription status using our native SDKs.
+              Native SDKs and production purchase flows are planned. Current work focuses on the runtime model, entitlement reads, and reliable store-event foundations.
             </p>
             <div className="mt-8">
               <a
@@ -82,20 +82,20 @@ export function Features() {
               </Badge>
             </div>
             <h3 className="text-2xl font-bold sm:text-4xl text-card-foreground tracking-tight">
-              Subscription Insights
+              Auditable Subscription State
             </h3>
             <p className="mt-6 text-base leading-8 text-foreground">
-              Get insights into your data with a single source of truth for your app. Monitor MRR, trials, churn rate, cohorts, and more.
+              PostgreSQL is planned as the authoritative source for subscription and entitlement state, with raw events retained through a provider-neutral inbox.
             </p>
             <p className="mt-4 text-base leading-8 text-foreground">
-              Understand your customers like never before with real-time metrics support for Apple App Store, Google Play, and Stripe.
+              Analytics, customer timelines, and store-specific reconciliation remain roadmap capabilities and will be published as they become testable.
             </p>
             <div className="mt-8">
               <a
                 href="#customers"
                 className="inline-flex items-center gap-1 text-primary hover:text-primary/90 font-semibold text-sm group transition-colors cursor-pointer"
               >
-                Explore the Dashboard
+                Review the Roadmap
                 <ChevronRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
@@ -114,20 +114,20 @@ export function Features() {
               </Badge>
             </div>
             <h3 className="text-2xl font-bold sm:text-4xl text-card-foreground tracking-tight">
-              Data Integrations
+              Event Delivery
             </h3>
             <p className="mt-6 text-base leading-8 text-foreground">
-              Subkit makes it easy to send enriched subscription events to services like Slack, Stripe, AppsFlyer, Branch, Adjust, and many more.
+              The early Event Inbox supports deduplication and recoverable worker processing across libSQL-compatible and PostgreSQL adapters.
             </p>
             <p className="mt-4 text-base leading-8 text-foreground">
-              Use revenue and LTV data to optimize ad spend, improve attribution, and get a deeper understanding of how customers use your app.
+              Outbound webhooks and third-party integrations are planned after store-event reconciliation and delivery guarantees are established.
             </p>
             <div className="mt-8">
               <a
                 href="#integrations"
                 className="inline-flex items-center gap-1 text-primary hover:text-primary/90 font-semibold text-sm group transition-colors cursor-pointer"
               >
-                See Our Integrations
+                Explore Event Foundations
                 <ChevronRight className="size-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>

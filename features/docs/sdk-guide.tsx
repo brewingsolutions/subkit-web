@@ -15,10 +15,10 @@ export function SdkGuide() {
       <div className="flex flex-col justify-between gap-4 border-b border-slate-100 pb-5 md:flex-row md:items-center">
         <div className="space-y-1">
           <h2 className="font-heading text-card-foreground text-lg font-bold">
-            Client SDK Quickstart
+            Client SDK Design Preview
           </h2>
           <p className="text-xs text-slate-500">
-            Use a placeholder key locally, then replace it with a project key.
+            Illustrative API shape only. These packages and methods are not currently published.
           </p>
         </div>
         <div className="flex rounded-lg border border-slate-200/30 bg-slate-100 p-1">
@@ -41,8 +41,8 @@ export function SdkGuide() {
       </div>
       <CodeBlock code={guide.code} />
       <p className="rounded-xl border bg-slate-50 p-5 text-xs leading-relaxed text-slate-600 sm:text-sm">
-        SDK Guides are versioned in this repository. Public REST operations are
-        published from the Internal Services OpenAPI contract.
+        These snippets communicate design direction and are not installable SDK documentation.
+        Stable public operations will be generated from the Subkit Core public contract.
       </p>
     </section>
   );

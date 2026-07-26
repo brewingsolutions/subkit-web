@@ -13,7 +13,7 @@ export function Footer() {
               Subkit
             </span>
             <p className="mt-4 text-sm leading-6 text-foreground max-w-xs">
-              The developer-friendly platform for building and managing in-app subscriptions. Simple integration, powerful insights.
+              Open-source, self-hostable subscription infrastructure under active development.
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Subkit. All rights reserved.
           </p>
           <div className="flex gap-4 text-xs text-slate-400">
-            <span>EU-focused, privacy-first infrastructure.</span>
+            <span>Built in public with portability and user control in mind.</span>
           </div>
         </div>
       </Container>

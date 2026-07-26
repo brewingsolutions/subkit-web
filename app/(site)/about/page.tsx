@@ -5,7 +5,7 @@ import { Shield, Code, Globe, Lock, Cpu, Server, Heart, Eye, Share2, Zap } from 
 
 export const metadata: Metadata = {
   title: "About Us - Subkit",
-  description: "Learn how Subkit is building the open-source, self-hosted alternative to Adapty and RevenueCat, powered by EU NGI principles.",
+  description: "Learn why Subkit is building portable, open-source subscription infrastructure and how to follow its early development.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-3xl text-center mb-16 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/50 text-xs font-semibold text-blue-700">
               <Globe className="size-3.5 animate-spin-slow" />
-              <span>Aligned with EU Next Generation Internet (NGI)</span>
+              <span>Open source · European funding applicant</span>
             </div>
             
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-card-foreground font-heading leading-tight">
@@ -26,7 +26,7 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-base sm:text-lg leading-relaxed text-foreground max-w-2xl mx-auto">
-              Subkit is the privacy-first, developer-friendly, self-hosted alternative to US-based proprietary platforms like RevenueCat and Adapty. Built to give developers full digital sovereignty.
+              Subkit is an early open-source foundation for portable subscription infrastructure, designed so teams can inspect, operate, and extend their own deployment.
             </p>
             <div className="bg-brand-accent/60 mx-auto mt-4 h-0.5 w-24" />
           </div>
@@ -42,10 +42,10 @@ export default function AboutPage() {
                   Why We Are Building Subkit
                 </h2>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  In-app subscriptions have become the lifeblood of modern mobile and web applications. However, the ecosystem is heavily consolidated under US proprietary SaaS giants like RevenueCat and Adapty. 
+                  Mobile subscription infrastructure is commonly delivered as a managed service. That is convenient, but it can make portability, inspection, and independent operation harder for teams that need those properties.
                 </p>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  Every time a user subscribes, sensitive purchase receipts, customer journeys, and transaction values are routed through black-box architectures outside Europe. We believe that critical transaction pipelines must be transparent, secure, and fully owned by the developers building them.
+                  Subscription systems often require teams to trust infrastructure they cannot inspect or operate themselves. We believe critical transaction pipelines should be portable, auditable, and available as open-source building blocks.
                 </p>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-semibold text-card-foreground">
                   Our mission is simple: to democratize in-app monetization by building an open-source standard for mobile subscriptions.
@@ -58,39 +58,39 @@ export default function AboutPage() {
               
               <div className="space-y-6 z-10">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl font-bold tracking-tight text-white font-heading">NGI Initiative</span>
+                  <span className="text-2xl font-bold tracking-tight text-white font-heading">European Open Internet Values</span>
                   <span className="text-[10px] uppercase bg-blue-500/20 text-blue-300 font-mono px-2 py-0.5 rounded-md border border-blue-500/30">
                     Sovereignty
                   </span>
                 </div>
                 
                 <h3 className="text-xl font-bold font-heading text-slate-100">
-                  EU Digital Sovereignty & Grant Vision
+                  Funding Intent & Public-Interest Direction
                 </h3>
                 
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Subkit is built directly in line with the European Commission’s <strong>Next Generation Internet (NGI)</strong> initiative. We champion an internet that is:
+                  Subkit has submitted a European open-source funding application and is awaiting review. An application does not imply selection, funding, endorsement, or support by NGI. Its public-interest goals overlap with themes promoted by European open-internet programmes:
                 </p>
                 
                 <ul className="text-xs sm:text-sm text-slate-300 space-y-3.5 pl-2">
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 mt-1">✓</span>
-                    <span><strong>Human-Centric:</strong> Privacy by design, placing absolute control back in the hands of creators and consumers.</span>
+                    <span><strong>Human-Centric:</strong> Privacy-aware design and meaningful operator control.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 mt-1">✓</span>
-                    <span><strong>Open-Source Centered:</strong> Transparent codebases that prevent single-vendor monopolies and tech colonization.</span>
+                    <span><strong>Open-Source Centered:</strong> Inspectable code, reusable interfaces, and portable deployment.</span>
                   </li>
                   <li className="flex items-start gap-2.5">
                     <span className="text-blue-400 mt-1">✓</span>
-                    <span><strong>Decentralized & Resilient:</strong> Self-hostable models enabling businesses to maintain data residency inside EU boundaries.</span>
+                    <span><strong>Portable & Resilient:</strong> Self-hostable models that can support an operator&apos;s residency and continuity strategy.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
-                <span>Made with ♥ in Europe</span>
-                <span className="font-mono text-[10px] text-blue-400">ngi.eu</span>
+                <span>Developed in Europe</span>
+                <span className="font-mono text-[10px] text-blue-400">Application pending · no award claimed</span>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-card-foreground font-heading">No Data Vendor Lock-in</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Your transactional and user activity data resides entirely inside your own servers. Migrating or integrating with custom internal business tools is a simple database query away.
+                  The self-hosted direction keeps application data in infrastructure selected by the operator. Portability and migration tooling are goals; they are not yet production guarantees.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-card-foreground font-heading">Auditability & Transparency</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Proprietary SDKs act as black boxes where developers cannot verify background tracking or telemetry. Subkit is completely transparent and open for third-party security audits.
+                  Public source allows developers and reviewers to inspect Subkit&apos;s implementation and report security concerns. Formal third-party audits have not yet been completed.
                 </p>
               </div>
             </div>
@@ -138,9 +138,9 @@ export default function AboutPage() {
                 <div className="size-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
                   <Globe className="size-5" />
                 </div>
-                <h3 className="text-lg font-bold text-card-foreground font-heading">GDPR Compliance by Design</h3>
+                <h3 className="text-lg font-bold text-card-foreground font-heading">Data-Control by Design</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Run inside European cloud providers or fully on-premise infrastructure. By self-hosting Subkit, you guarantee 100% data residency compliance for EU users without complex compliance legal overlays.
+                  Portable deployment can help organizations choose where data is processed. Self-hosting does not itself guarantee GDPR compliance; operators remain responsible for security, retention, lawful processing, contracts, and data-subject rights.
                 </p>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-card-foreground font-heading">Green IT & Performance</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Unlike bloated proprietary SDKs that increase app size and battery consumption, Subkit’s zero-dependency native SDKs are ultra-lightweight. This preserves device battery, reduces data overhead, and minimizes carbon footprints—fully aligning with Green IT standards.
+                  Planned SDKs will target small, documented dependency surfaces and measurable startup behavior. No performance or environmental-impact claim will be made before implementations are benchmarked.
                 </p>
               </div>
             </div>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-card-foreground font-heading">Open Core & Federation</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  We are not just building a self-hosted server. Our vision includes a federated model where distinct Subkit instances can securely communicate via verified APIs, establishing a decentralized subscription validation network that eliminates central monopoly points.
+                  A future research direction may explore interoperable Subkit installations. Federation is not part of the current product and would require a defined trust, identity, privacy, and threat model.
                 </p>
               </div>
             </div>
@@ -177,9 +177,9 @@ export default function AboutPage() {
                 <div className="size-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
                   <Code className="size-5" />
                 </div>
-                <h3 className="text-lg font-bold text-card-foreground font-heading">Zero-Dependency SDKs</h3>
+                <h3 className="text-lg font-bold text-card-foreground font-heading">Planned Public SDKs</h3>
                 <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                  Fully open-source client SDKs integrated directly within native frameworks like iOS Swift, Android Kotlin, Flutter, and React Native. Highly optimized to execute without impacting app boot performance.
+                  Swift, Kotlin, Flutter, and React Native are planned targets. Implementations, package footprints, compatibility, and performance will be published only after they are measured.
                 </p>
               </div>
             </div>
@@ -190,8 +190,8 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto space-y-8">
               <div className="text-center space-y-2">
                 <span className="text-brand-accent-foreground font-mono text-[10px] font-bold tracking-widest uppercase">Architecture</span>
-                <h3 className="text-2xl font-bold text-card-foreground font-heading">Modern, Light, and Developer-Centric</h3>
-                <p className="text-xs sm:text-sm text-slate-500">How Subkit replaces heavy proprietary SDK configurations.</p>
+                <h3 className="text-2xl font-bold text-card-foreground font-heading">Portable, Explicit, and Developer-Centric</h3>
+                <p className="text-xs sm:text-sm text-slate-500">The current architecture direction and its pre-alpha boundaries.</p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -200,9 +200,9 @@ export default function AboutPage() {
                     <Server className="size-4" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-card-foreground font-heading">Self-Hosted Docker Node</h4>
+                    <h4 className="text-sm font-bold text-card-foreground font-heading">Portable Self-Hosted Runtime</h4>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                      Deploy the Subkit engine via a single Docker container. Connect to standard PostgreSQL or SQLite databases and scale horizontally as your traffic grows.
+                      Run the Core API directly with Node.js and PostgreSQL or use the OCI-compatible image and Compose reference deployment. The Event Inbox also has libSQL-compatible and PostgreSQL adapters. Production scaling guidance is not yet published.
                     </p>
                   </div>
                 </div>
@@ -212,9 +212,9 @@ export default function AboutPage() {
                     <Cpu className="size-4" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-card-foreground font-heading">Zero-Dependency SDKs</h4>
+                    <h4 className="text-sm font-bold text-card-foreground font-heading">Planned SDK Clients</h4>
                     <p className="text-xs text-slate-500 leading-relaxed mt-1">
-                      Native iOS, Android, Flutter, and React Native client SDKs. Lean codebases that don&apos;t bloat your app sizes or slow down startup cycles.
+                      Planned iOS, Android, Flutter, and React Native clients built against an explicit public contract.
                     </p>
                   </div>
                 </div>
@@ -223,10 +223,10 @@ export default function AboutPage() {
               <div className="border-t border-slate-200/60 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
                 <div>
                   <p className="text-xs font-semibold text-slate-400 font-mono">SUPPORT THE INITIATIVE</p>
-                  <p className="text-sm text-slate-600 font-medium">Join us on GitHub and help us construct a sovereign digital future.</p>
+                  <p className="text-sm text-slate-600 font-medium">Review the current foundation, open an issue, or contribute on GitHub.</p>
                 </div>
                 <a
-                  href="https://github.com/brewingsolutions/subkit"
+                  href="https://github.com/brewingsolutions/subkit-core"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-2.5 rounded-full transition-all"
@@ -242,7 +242,7 @@ export default function AboutPage() {
           <div className="text-center space-y-6">
             <h3 className="text-2xl font-bold font-heading text-card-foreground">Let&apos;s Build a More Open Internet</h3>
             <p className="text-sm text-slate-500 max-w-lg mx-auto">
-              Are you applying for NGI grants or looking to collaborate? We would love to share resources, documentation, and technical alignment.
+              Interested in open-source subscription infrastructure or European digital-commons funding? We welcome technical feedback and collaboration.
             </p>
             <div>
               <a

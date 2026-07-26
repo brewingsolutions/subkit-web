@@ -13,31 +13,31 @@ interface FaqItem {
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What is Subkit?",
-    answer: "Subkit is an open-source in-app subscription and billing infrastructure for mobile apps. It acts as a unified hub to manage product catalog offerings, cryptographically validate receipts, track customer subscription lifecycles, and broadcast billing events via real-time webhooks.",
+    answer: "Subkit is an early open-source foundation for portable mobile subscription infrastructure. The current Core includes runtime, data-model, contract, and durable Event Inbox foundations; production receipt validation, lifecycle reconciliation, SDKs, and outbound webhooks remain roadmap work.",
   },
   {
     question: "How does Subkit compare to RevenueCat, Adapty, or Superwall?",
-    answer: "Subkit provides the receipt validation and subscription state management of RevenueCat, combined with the remote paywall configuration capabilities of Adapty and Superwall. The key difference is that Subkit is 100% open-source and self-hostable, eliminating expensive growth taxes (revenue percentage commissions) and proprietary vendor lock-in.",
+    answer: "Subkit is pursuing a portable, open-source alternative to proprietary subscription infrastructure. The current repository is an early Core foundation; production store integrations, SDKs, paywalls, analytics, and managed Cloud capabilities are roadmap work.",
   },
   {
     question: "What is Subkit's connection to the EU Next Generation Internet (NGI) initiative?",
-    answer: "Subkit is designed around NGI values such as digital sovereignty, user-first privacy, open-source transparency, and resilience. Self-hosting can give operators control over where purchase metadata is processed, but compliance still depends on each deployment and the operator's legal obligations. Subkit is not currently presented as an NGI-funded project.",
+    answer: "Subkit has submitted a European open-source funding application and is awaiting review. Its goals overlap with NGI themes such as openness, privacy, user control, and resilient digital infrastructure. The pending application does not imply selection, funding, endorsement, or support by NGI.",
   },
   {
     question: "Can I run A/B testing and design paywalls on my self-hosted instance?",
-    answer: "Yes! Subkit's architectural roadmap includes JSON-driven dynamic paywalls and GDPR-compliant local A/B testing. This allows you to remotely customize paywall price offerings and run experiments directly on your own PostgreSQL database without sending end-user events to proprietary US analytics clouds.",
+    answer: "Not yet. Remote paywall configuration and locally processed experimentation are roadmap items. Their final interfaces and delivery dates are not guaranteed during the pre-alpha phase.",
   },
   {
     question: "Is the self-hosted version free?",
-    answer: "Yes, the self-hosted community core is 100% open-source and free forever. You can easily deploy it on any VPS, cloud instance, or bare-metal server using our simple Docker Compose setups, gaining absolute data sovereignty and unlimited scale at zero licensing cost.",
+    answer: "Subkit Core is licensed under Apache-2.0 and can be evaluated through its Compose reference deployment or run directly with Node.js and PostgreSQL. Containers are a supported packaging path, not a product requirement. Operators remain responsible for infrastructure, security, backups, upgrades, and compliance. The project is pre-alpha and not ready for production subscription decisions.",
   },
   {
     question: "Which platforms and payment providers do you support?",
-    answer: "Subkit natively coordinates purchases, subscription state, and receipt validation across Apple App Store, Google Play Store, and Stripe out-of-the-box. Our unified, zero-dependency SDKs support iOS Swift, Android Kotlin, Flutter, and React Native frameworks with zero impact on app boot performance.",
+    answer: "Production Apple App Store and Google Play integrations are planned but not implemented. Planned SDK targets include Swift, Kotlin, Flutter, and React Native. Stripe and additional providers will be evaluated after the core store lifecycle is reliable.",
   },
   {
     question: "What are the benefits of the managed Cloud tier?",
-    answer: "While the self-hosted version has 100% of the core features, you are responsible for server maintenance, database backups, security patches, and scaling. The managed Subkit Cloud tier handles all operational overhead for you, ensuring 99.99% uptime on sovereign EU clouds, automated backups, globally distributed low-latency endpoints, and priority developer support.",
+    answer: "Subkit Cloud is planned for teams that prefer managed upgrades, backups, monitoring, and support. Pricing, regions, service levels, and availability commitments have not been finalized. Joining the waitlist does not create a service or uptime commitment.",
   },
 ];
 

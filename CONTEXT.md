@@ -17,12 +17,16 @@ An estimate derived from a Pricing Catalog and a prospective customer's usage as
 _Avoid_: Final invoice, guaranteed charge
 
 **SDK Guide**:
-Versioned integration guidance and examples for a supported Subkit client SDK.
+Versioned integration guidance for a published Subkit client SDK. Until an SDK is
+published, examples must be labeled as design previews rather than quickstarts.
 _Avoid_: API Reference, code mockup
 
 **API Reference**:
 The authoritative description of Subkit's public REST operations and schemas.
 _Avoid_: SDK Guide, handwritten endpoint list
+
+If no stable public operations exist, show contract status rather than inventing an API
+Reference. Private Internal Services operations must never fill this role.
 
 **Roadmap**:
 The published sequence and current state of planned Subkit product capabilities.

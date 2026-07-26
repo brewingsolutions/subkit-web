@@ -16,8 +16,8 @@ const TABS: ReadonlyArray<{
   label: string;
   icon: typeof BookOpen;
 }> = [
-  { id: "sdk", label: "SDK Quickstart", icon: BookOpen },
-  { id: "api", label: "API Reference", icon: Terminal },
+  { id: "sdk", label: "SDK Preview", icon: BookOpen },
+  { id: "api", label: "Contract Preview", icon: Terminal },
   { id: "status", label: "System Status", icon: Activity },
 ];
 
