@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  experimental: {
+    useTypeScriptCli: true,
+  },
 };
 
 export default nextConfig;
