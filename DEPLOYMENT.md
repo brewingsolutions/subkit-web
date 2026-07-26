@@ -1,6 +1,6 @@
-# Subkit - Canlıya Alma ve Geliştirme Kılavuzu (Deployment Guide)
+# Subkit - Canlıya Alma ve Geliştirme Kılavuzu (GHCR & Bunny.net)
 
-Bu dosya, kod üzerinde değişiklik yaptığınızda sitenizi yerel ortamda test etmek ve Bunny.net (Magic Containers) üzerinde sıfır kesintiyle güncellemek için kullanacağınız temel komutları içerir.
+Bu dosya, kod üzerinde değişiklik yaptığınızda sitenizi yerel ortamda test etmek, imajı **GitHub Container Registry (GHCR)** üzerine yüklemek ve Bunny.net (Magic Containers) üzerinde sıfır kesintiyle güncellemek için gerekli kılavuzdur.
 
 ---
 
@@ -25,33 +25,47 @@ npm run build
 
 ---
 
-## 🐋 3. Docker Paketini Derleme (Build Image)
+## 🤖 3. Otomatik Canlıya Alma (GitHub Actions - Tavsiye Edilen)
 
-Değiştirdiğiniz yeni kodları içeren Bunny uyumlu yeni Docker paketini bilgisayarınızda derleyin:
+Projede `.github/workflows/deploy.yml` otomasyonu aktiftir.
 
-```bash
-docker buildx build --platform linux/amd64 -t atadn/subkit-web:latest --load .
-```
-
----
-
-## 📤 4. Paketi Buluta Yükleme (Push Image)
-
-Derlediğiniz güncel paketi Docker Hub üzerindeki gizli (private) reponuza gönderin:
-
-```bash
-docker push atadn/subkit-web:latest
-```
+`main` branch'ine kod push ettiğinizde GitHub Actions otomatik olarak:
+1. Docker imajını `linux/amd64` mimarisinde derler.
+2. `ghcr.io/<github-kullanici-adi>/<repo-adi>:latest` adresiyle GHCR'ye yükler.
 
 ---
 
-## 🚀 5. Canlı Sitede Güncelleme (Redeploy)
+## 💻 4. Manuel GHCR Yüklemesi (Bilgisayarınızdan)
 
-Yeni paketi Docker Hub'a gönderdikten sonra Bunny.net'in güncel sürümü çekmesi için:
+Eğer imajı GitHub Actions kullanmadan kendi bilgisayarınızdan GHCR'ye yüklemek isterseniz:
 
-1. **Bunny.net** paneline giriş yapın.
-2. Sol menüden **Magic Containers** sekmesine tıklayın.
-3. Konteynerinizi (`subkit-web`) seçin.
-4. Sağ üst köşede yer alan **"Redeploy"** veya **"Restart Container"** butonuna basın.
+1. **GHCR'ye Giriş Yapın:**
+   ```bash
+   docker login ghcr.io -u KULLANICI_ADI
+   # Parola istendiğinde GitHub Personal Access Token (PAT) girin.
+   ```
 
-Bunny saniyeler içinde yeni paketi arka planda çekecek ve sitenizi **hiç kapatmadan, sıfır saniye kesintiyle** en güncel sürüme güncelleyecektir! 🎉
+2. **İmajı Derleyin:** *(Adın tamamı küçük harf olmalıdır)*
+   ```bash
+   docker buildx build --platform linux/amd64 -t ghcr.io/<kullanici-adi>/subkit-web:latest --load .
+   ```
+
+3. **GHCR'ye Yükleyin:**
+   ```bash
+   docker push ghcr.io/<kullanici-adi>/subkit-web:latest
+   ```
+
+---
+
+## 🚀 5. Bunny.net (Magic Containers) Konfigürasyonu
+
+İmaj artık GHCR üzerinde tutulacağı için Bunny.net ayarlarını bir defaya mahsus güncelleyin:
+
+1. **Bunny.net** paneline girip **Magic Containers** sekmesinden `subkit-web` konteynerinizi seçin.
+2. **Container Image Path:** `ghcr.io/<kullanici-adi>/<repo-adi>:latest` olarak değiştirin.
+3. **Registry Authentication (Gizli Repo ise):**
+   - **Registry Host:** `ghcr.io`
+   - **Username:** GitHub Kullanıcı Adınız
+   - **Password / Token:** `read:packages` yetkili GitHub Personal Access Token (PAT).
+   *(Not: GitHub Paket Ayarlarından paketi "Public" yaparsanız parola girmeden de Bunny çekebilir).*
+4. **Redeploy:** Sağ üst köşedeki **"Redeploy"** butonuna basarak yeni imajı sıfır kesintiyle canlıya alın. 🎉
