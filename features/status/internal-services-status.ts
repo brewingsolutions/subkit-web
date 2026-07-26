@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import {
   UNKNOWN_SYSTEM_STATUS,
   type StatusCondition,
@@ -40,6 +41,7 @@ export function mapInternalStatus(
 }
 
 export async function getSystemStatus(): Promise<SystemStatusSnapshot> {
+  await connection();
   const baseUrl = process.env.INTERNAL_SERVICES_URL;
 
   if (!baseUrl) {
