@@ -11,8 +11,8 @@ export function RevenueChart() {
         <svg className="size-full" viewBox="0 0 100 30" preserveAspectRatio="none">
           <defs>
             <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#00d4ff" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="#00d4ff" stopOpacity="0" />
+              <stop offset="0%" stopColor="var(--chart-2)" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="var(--chart-2)" stopOpacity="0" />
             </linearGradient>
           </defs>
           {/* Area Fill */}
@@ -24,7 +24,7 @@ export function RevenueChart() {
           <path
             d="M 0 25 Q 20 20 40 15 T 80 5 L 100 2"
             fill="none"
-            stroke="#00d4ff"
+            stroke="var(--chart-2)"
             strokeWidth="1.5"
             strokeLinecap="round"
             className="animate-pulse"

@@ -13,6 +13,8 @@ This guide establishes the rules and patterns that all AI coding agents must fol
 ## 1. Project Overview
 - A production-grade Next.js landing page & marketing website.
 - **Goal**: Maintain visual excellence, clean domain separation, and long-term expandability.
+- Read the repository root `CONTEXT.md` before changing product language or domain ownership.
+- Read applicable decisions in `docs/adr/` before architectural changes.
 
 ## 2. Tech Stack
 - **Framework**: Next.js (App Router), React 19, TypeScript
@@ -26,21 +28,25 @@ This guide establishes the rules and patterns that all AI coding agents must fol
 ## 3. Directory & Architecture Rules
 Keep elements separated strictly by domain and category:
 ```text
+features/             # Domain-owned content, types, server/client implementation, and tests
+├── contact/
+├── docs/
+├── home/
+├── navigation/
+├── pricing/
+├── roadmap/
+└── status/
 components/
-├── ui/              # Primitive, atomic, unopinionated widgets (button, generic card)
-├── layout/          # Global structural scaffolding (container, section, navbar, footer)
-├── marketing/       # Page-specific sections (hero, features, testimonial-card, testimonials)
-└── visuals/         # Decorative/technical mockups (charts, logger streams, nodes flow)
-lib/
-├── types/           # Type definitions split by domain (navigation.ts, mock-data.ts)
-└── constants/       # Static configurations split by domain (navigation.ts, marketing.ts, mock-data.ts)
+├── ui/               # Primitive, atomic, unopinionated widgets
+├── layout/           # Global structural scaffolding
+└── visuals/          # Shared decorative and technical visuals
 ```
 - **Rule**: Avoid monolithic files like single `constants.ts` or single `types.ts`. Split by domain or keep component-local.
 
 ## 4. Component Standards
 - Prefer highly modular,composable components.
 - Do not repeat JSX, custom borders, or responsive sizing grids.
-- Keep `components/ui/` unopinionated. Marketing-specific hover transitions, glow mesh highlights, or border accents belong in `components/marketing/` or `components/visuals/`.
+- Keep `components/ui/` unopinionated. Product-specific presentation belongs in its owning `features/` module; reusable decorative visuals belong in `components/visuals/`.
 - **Files**: Use **lowercase kebab-case** names (`testimonial-card.tsx`).
 
 ## 5. Styling & Visual Design Guidelines

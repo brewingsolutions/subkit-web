@@ -3,7 +3,7 @@
 
 Subkit is a production-grade, developer-friendly platform designed to handle the complexity of global in-app subscriptions, customer management, and real-time revenue analytics—from your first transaction to your billionth.
 
-This repository hosts the ultra-optimized, high-performance marketing landing page and technical UI mockups built on modern React, Next.js, and Tailwind v4.
+This repository hosts Subkit's public product surface: product discovery, SDK Guides, API Reference, Pricing Catalog, Roadmap, System Status, and contact intake.
 
 ---
 
@@ -27,17 +27,25 @@ The project is built on the absolute cutting-edge frontend ecosystem:
 
 ## 📂 Codebase Mimarisi & Klasör Yapısı
 
-Kod tabanımız, en üst seviye ölçeklenebilirlik kurallarına göre katmanlandırılmıştır:
+Routing ile domain implementation birbirinden ayrılır. `app/(site)` URL'leri değiştirmeden ortak public shell'i sağlar; domain içeriği, tipleri, server/client implementation ve testler ilgili `features/` alanında birlikte tutulur:
 
 ```text
+app/
+├── (site)/          # Ortak public site layout ve route entry point'leri
+└── api/             # HTTP route adapter'ları
+features/
+├── contact/         # Contact Inquiry intake ve delivery adapter'ları
+├── docs/            # SDK Guide ve API Reference presentation
+├── home/            # Ana sayfa domain implementation'ı
+├── navigation/      # Public navigation content ve etkileşim
+├── pricing/         # Pricing Catalog, Pricing Quote ve calculator
+├── roadmap/         # Roadmap snapshot ve presentation
+└── status/          # System Status modeli ve presentation
 components/
-├── ui/              # Saf, atomik, markasız arayüz elemanları (button, generic card)
-├── layout/          # Global iskelet elemanları (container, section, navbar, footer)
-├── marketing/       # Pazarlama odaklı özel kartlar (hero, features, testimonials)
-└── visuals/         # Dinamik, etkileşimli dashboard ve SVG akış mockup bileşenleri
-lib/
-├── types/           # Etki alanlarına göre ayrılmış TypeScript tanımları
-└── constants/       # Etki alanlarına göre ayrılmış veri sabitleri
+├── ui/              # Saf, atomik, markasız arayüz elemanları
+├── layout/          # Global iskelet elemanları
+└── visuals/         # Paylaşılan dekoratif ve teknik görseller
+docs/adr/             # Uzun ömürlü mimari kararlar
 ```
 
 ---
@@ -58,16 +66,26 @@ Kod doğruluğu, TypeScript ve Turbopack derlemesi için:
 npm run build
 ```
 
+### 3. Doğrulama
+
+```bash
+npm test
+npm run lint
+npx tsc --noEmit
+```
+
+Pricing Catalog, Roadmap ve System Status için authoritative kaynak planlanan `subkit-internal-services` reposudur. Bu repo hazır olana kadar pricing ve roadmap tarihli temporary local kaynaklar kullanır; System Status doğrulanamıyorsa `Unknown` gösterilir.
+
 ---
 
 ## 🐋 Docker & Küresel Dağıtım (Deployment)
 
 Projemiz, **Next.js Standalone** çıktısı sayesinde Dockerize edilmiş durumdadır ve **Bunny.net Magic Containers** üzerinde global edge olarak dağıtılmaya tamamen hazırdır.
 
-Detaylı adım adım manuel derleme, Docker Hub'a yükleme ve Bunny.net üzerinde sıfır saniye kesintiyle sitenizi güncelleme kılavuzu için **[DEPLOYMENT.md](file:///Users/ataberkdonmez/Downloads/test/landing-page/DEPLOYMENT.md)** dosyasını inceleyin.
+Detaylı adım adım kılavuz için **[DEPLOYMENT.md](./DEPLOYMENT.md)** dosyasını inceleyin.
 
 ---
 
 ## 🤖 Yapay Zeka Ajan Kuralları (AI Agents)
 
-Bu projede çalışacak olan AI kodlama yardımcılarının, temiz mimariyi koruması ve kod kalitesini bozmaması için uyması gereken strict kurallara **[AGENTS.md](file:///Users/ataberkdonmez/Downloads/test/landing-page/AGENTS.md)** dosyasından erişebilirsiniz.
+Kodlama ajanlarının kuralları **[AGENTS.md](./AGENTS.md)**, ürün dili **[CONTEXT.md](./CONTEXT.md)** ve mimari kararlar **[docs/adr](./docs/adr/)** altında tutulur.

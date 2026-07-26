@@ -18,7 +18,7 @@ export function Section({
     <Component
       className={cn(
         "relative overflow-hidden py-20 lg:py-32 bg-background text-foreground",
-        borderTop && "border-t border-slate-200/60 dark:border-border",
+        borderTop && "border-t border-slate-200/60",
         className
       )}
       {...props}

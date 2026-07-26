@@ -1,5 +1,5 @@
 import { Container } from "@/components/layout/container";
-import { FOOTER_LINKS } from "@/lib/constants/navigation";
+import { FOOTER_LINKS } from "@/features/navigation/content";
 
 export function Footer() {
   return (
